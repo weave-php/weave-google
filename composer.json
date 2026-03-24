@@ -1,0 +1,66 @@
+{
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "weave-php/google",
+    "description": "Google APIs provider for the Weave automation package (Gmail, Sheets, Calendar).",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "weave",
+        "google",
+        "gmail",
+        "sheets",
+        "calendar",
+        "automation"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Weave PHP",
+            "email": "hello@weave-php.dev"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "weave-php/weave": "@dev",
+        "google/apiclient": "^2.15"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-laravel": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Weave\\Google\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Weave\\Google\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Weave\\Google\\GoogleServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:weave-php/weave.git"
+        }
+    ],
+    "scripts": {
+        "test": "pest"
+    }
+}
